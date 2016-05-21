@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TIME TABLE CREATOR</title>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href='font.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+    <script src="jQuery.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+
+            $(document).ready(function(){
+
+                function add(){
+                $('.add').keydown(function(e){
+                   if(e.keyCode == 13){
+                       var val = $(this).val();
+                       $(this).closest('td').text(val);
+                    }
+                });
+                }
+
+                $('td').hover(function(){
+                    $(this).children('.add').show();
+                    $(this).click(function(){
+                        $(this).children('.add').focus;
+                        add();
+                    });
+                }, function(){
+                    $('.add').hide();
+                });
+
+                $('td').dblclick(function(){
+                    var value = $(this).text();
+                    $(this).html("<input type=\"text\" placeholder=\"add..\" class=\"add\" value='"+value+"'>");
+                    $(this).children('.add').show().focus();
+                    add();
+                });
+
+            });
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="text-primary">TIME TABLE CREATOR</h1>
+        <h4 class="text-right text-info">INSTRUCTIONS</h4>
+        <p class="text-right text-muted">Hover on Table row and press 'Enter key' to insert.</p>
+        <p class="text-right text-muted">Double click to change the existing content.</p>
+        <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>DAYS</th>
+                <td class="text-info">PERIOD 1</td>
+                <td class="text-info">PERIOD 2</td>
+                <td class="text-info">PERIOD 3</td>
+                <td class="text-info">PERIOD 4</td>
+                <td class="text-info">PERIOD 5</td>
+                <td class="text-info">PERIOD 6</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr class="tr">
+                <th>MONDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+
+            </tr>
+            <tr>
+                <th>TUESDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+            <tr>
+                <th>WEDNESDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+            <tr>
+                <th>THURSDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+            <tr>
+                <th>FRIDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+            <tr>
+                <th>SATURDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+            <tr>
+                <th>SUNDAY</th>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+                <td><input type="text" placeholder="add.." class="add"></td>
+            </tr>
+        </table>
+        </div>
+
+        <h4 class="text-info">&copy; AHSAN AK 2016</h4>
+    </div>
+
+
+
+</body>
+</html>
